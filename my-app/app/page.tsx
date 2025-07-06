@@ -3,9 +3,12 @@ import { Separator } from "@/components/ui/separator"
 import { ModeToggle } from "./components/mode-toggle"
 // Next
 import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Linkedin, Mail, Newspaper, Youtube } from "lucide-react"
 import Link from "next/link"
+// Icons
+import { ExternalLink, Github, Linkedin, Mail, Newspaper, Youtube } from "lucide-react"
+// Shadcn
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 export default async function Home() {
 
@@ -215,7 +218,7 @@ export default async function Home() {
       </h3>
 
       <section id={'links'} className={'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-4'}>
-        <article className={'flex flex-col h-36 justify-between items-center'}>
+        <article className={'flex flex-col h-48 justify-between items-center'}>
           <Image
             src={'/google.png'}
             alt="Google Logo"
@@ -226,10 +229,16 @@ export default async function Home() {
           <div className={'text-center'}>
             <h4 className={'text-sm mb-1'}>Google Project Management</h4>
             <p className={'text-muted-foreground text-xs'}>Professional Certificate</p>
+            <Button size={'sm'} variant={'ghost'} asChild>
+              <Link href={'https://www.coursera.org/account/accomplishments/professional-cert/certificate/AJB8NV4V7YMH'} target={'_blank'}>
+                Certification
+                <ExternalLink />
+              </Link>
+            </Button>
           </div>
         </article>
 
-        <article className={'flex flex-col h-36 justify-between items-center'}>
+        <article className={'flex flex-col h-48 justify-between items-center'}>
           <Image
             src={'/meta.png'}
             alt="Meta Logo"
@@ -240,10 +249,16 @@ export default async function Home() {
           <div className={'text-center'}>
             <h4 className={'text-sm mb-1'}>Meta Front-End Developer</h4>
             <p className={'text-muted-foreground text-xs'}>Professional Certificate</p>
+            <Button size={'sm'} variant={'ghost'} asChild>
+              <Link href={'https://www.coursera.org/account/accomplishments/professional-cert/certificate/AJB8NV4V7YMH'} target={'_blank'}>
+                Certification
+                <ExternalLink />
+              </Link>
+            </Button>
           </div>
         </article>
 
-        <article className={'flex flex-col h-36 justify-between items-center'}>
+        <article className={'flex flex-col h-48 justify-between items-center'}>
           <Image
             src={'/pmi.svg'}
             alt="Meta Logo"
@@ -254,6 +269,12 @@ export default async function Home() {
           <div className={'text-center'}>
             <h4 className={'text-sm mb-1'}>Certified Associate in Project Management</h4>
             <p className={'text-muted-foreground text-xs'}>In progress...</p>
+            <Button size={'sm'} variant={'ghost'} asChild>
+              <Link href={'https://www.coursera.org/account/accomplishments/professional-cert/certificate/AJB8NV4V7YMH'} target={'_blank'}>
+                Certification
+                <ExternalLink />
+              </Link>
+            </Button>
           </div>
         </article>
       </section>
