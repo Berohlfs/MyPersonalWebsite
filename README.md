@@ -11,7 +11,7 @@ Welcome to the repository of my personal website, built with **Next.js**, **Tail
 - ⚡️ [**Next.js**](https://nextjs.org/) – Full-stack React framework
 - 🎨 [**Tailwind CSS**](https://tailwindcss.com/) – Utility-first CSS
 - 🧩 [**Shadcn UI**](https://ui.shadcn.com/) – Beautifully designed components
-- 📦 Hosting on Vercel
+- 📦 Hosted on Vercel
 
 ---
 
