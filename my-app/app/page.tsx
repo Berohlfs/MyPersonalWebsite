@@ -64,13 +64,19 @@ export default async function Home() {
   })
 
   async function getMediumPosts(username: string) {
-    const feed = await parser.parseURL(`https://medium.com/feed/@${username}`)
+    const res = await fetch(`https://medium.com/feed/@${username}`, {
+      next: {
+        revalidate: 3600
+      }
+    })
+    const xml = await res.text()
+    const feed = await parser.parseString(xml)
 
     return feed.items.map(item => {
       const html = item.contentEncoded as string
       const plainText = html.replace(/<[^>]+>/g, '').trim() // strip HTML tags
 
-      const preview = plainText.split('.')[1].slice(0, 200) + (plainText.length > 150 ? '…' : '')
+      const preview = plainText.slice(0, 200) + (plainText.length > 200 ? '…' : '')
 
       return {
         title: item.title,
