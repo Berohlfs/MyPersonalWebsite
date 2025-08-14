@@ -2,9 +2,10 @@
 import Image from "next/image"
 import Link from "next/link"
 // Icons
-import { ExternalLink, Github, Linkedin, Newspaper, Youtube } from "lucide-react"
+import { ExternalLink, Github, GraduationCap, Linkedin, Newspaper, Youtube } from "lucide-react"
 // Shadcn
 import { Badge } from "@/components/ui/badge"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export const Intro = () => {
     return (
@@ -49,6 +50,30 @@ export const Intro = () => {
                             <ExternalLink />
                         </Badge>
                     </Link>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Badge className={'bg-gray-600 text-white cursor-pointer'}>
+                                <GraduationCap />
+                                Bachelor&apos;s Capstone Project
+                            </Badge>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuItem>
+                                <Link href={'https://github.com/Berohlfs/BachelorsThesisSoftwareEngineering'} target={'_blank'}>
+                                    <div className={'flex gap-2 items-center'}>
+                                        Visit GitHub Repo <ExternalLink />
+                                    </div>
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <Link href={'https://tuscan.bernardorohlfs.com'} target={'_blank'}>
+                                    <div className={'flex gap-2 items-center'}>
+                                        View Live Demo <ExternalLink />
+                                    </div>
+                                </Link>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 </nav>
 
             </div>
