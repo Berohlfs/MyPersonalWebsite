@@ -4,6 +4,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 // Icons
 import { Eye } from "lucide-react"
+// Libs
+import dayjs from 'dayjs'
 
 type Props = {
     articles: {
@@ -24,7 +26,7 @@ export const MediumArticles = ({ articles }: Props) => {
                         <p className={'text-sm mb-4'}>{item.description}</p>
                     </div>
                     <div className={'flex justify-between items-center'}>
-                        <p className={'text-xs text-muted-foreground'}>{item.pubDate}</p>
+                        <p className={'text-xs text-muted-foreground'}>Date: {dayjs(item.pubDate).format('MM/DD/YYYY')}</p>
                         <Link href={item.link || ''} target={'_blank'}>
                             <Button size={'sm'} variant={'outline'}>
                                 Read full article <Eye />
